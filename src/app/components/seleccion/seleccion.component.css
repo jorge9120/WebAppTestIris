@@ -1,0 +1,26 @@
+.auth-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100vh;
+}
+.auth-content{
+    width: 25%;
+}
+.icono{
+    text-align: center;
+    background-color: rgb(79, 240, 224);
+}
+.card{
+    background-color: #e4e4e4;
+}
+.cerrar{
+    text-align:right
+}
+
+.formSave{
+    display: flex;
+}

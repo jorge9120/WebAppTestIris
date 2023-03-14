@@ -1,0 +1,60 @@
+<div class="auth-wrapper">
+
+	<div class="auth-content">
+
+		<div class="card">
+            <div class="icono">
+                <img src="./../../../assets/logo.png" alt="" width="80px">
+            </div>
+			<div class="row align-items-center text-center">
+				<div class="col-md-12">
+					<div class="card-body">
+
+						<h4 class="mb-3 f-w-400">To do list</h4>
+                        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+                            <div class="form-group mb-3">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" formControlName="name" placeholder="New item" aria-label="New item" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary" type="submit">+</button>
+                                    </div>
+                                  </div>
+                            </div>
+                        </form>
+                        <form [formGroup]="checkoutForm2" (ngSubmit)="onSubmit(checkoutForm.value)">
+						<div class="form-group mb-3">
+                            <select name="estados" id="estados" formControlName="verState" class="form-control" (change)="onChange($event)">
+                                <option *ngFor="let item of estados;let index = index" [value]="item.id" [selected]="valorItem" >{{item.name}}</option>
+
+                            </select>
+						</div>
+                    </form>
+                        <h4 class="mb-3 f-w-400" for="Password">All</h4>
+						<div class="form-group mb-4" style="
+                        text-align: left;">
+							
+                            <div class="list-group">
+
+                                <div class="list-group-item" *ngFor="let item of arraySeleccion">
+                                    <div class="row">
+                                        <div class="col-12 col-md-8">
+                                            <label>
+                                                <input class="form-check-input me-1" type="checkbox" [checked]="item.state=='1'" (change)="setItem($event,item)">
+                                                {{item.name}}
+                                            </label>
+                                        </div>
+                                        <div class="col-6 col-md-4 cerrar">
+                                            <button type="button" class="btn-close" aria-label="Close" (click)="deleteItem(item.id)"></button>
+                                        </div>
+                                      </div>
+                                </div>    
+                            </div>  
+                           	
+                        </div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
